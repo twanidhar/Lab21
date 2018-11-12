@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +12,12 @@
 
 	<form action="/registration">
 		<p>
-			First Name: <input name= "FirstName" />
+			First Name: <input id="firstname" name= "FirstName"required minlength="2" maxlength="20"  />
 		</p>
 		<p>
-			Last Name: <input name= "LastName" />
+			Last Name: <input name= "LastName" pattern="[A-Z][a-z]*" />
 		</p>
-		<p> Email: <input name= "Email" />
+		<p> Email: <input name= "Email" type = "Email" />
 		</p>
 		<p> Phone Number: <input name = "PhoneNumber" type = "phonenumber"/>
 		</p>

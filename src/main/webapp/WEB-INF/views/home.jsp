@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome to GC Coffee Shop</title>
+<title>Dhar's Coffee Shop</title>
 </head>
 <body>
-	<h1>Welcome to GC Coffee</h1>
+	<h1>Welcome to Dhar's Coffee Shop</h1>
 	<a href="/forms">Registration</a>
 
 </body>

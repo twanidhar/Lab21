@@ -1,5 +1,6 @@
 package co.grandcircus1.coffeeshopdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -8,6 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CoffeeShopController {
+	
+	@Autowired
+	User user;
+	
+	@Autowired
+	BakeryList list;
 
 	@RequestMapping("/")
 	public ModelAndView index() {
@@ -29,4 +36,11 @@ public class CoffeeShopController {
 		mv.addObject("PhoneNumber", PhoneNumber);
 		mv.addObject("Password", Password);
 		return mv;
-	}}
+	}
+	@RequestMapping("/BakeryList")
+	public ModelAndView showBakeryList() {
+		ModelAndView mav = new ModelAndView("list-bakery");
+		mav.addObject("list", list.getList());
+		return mav;
+
+}}
