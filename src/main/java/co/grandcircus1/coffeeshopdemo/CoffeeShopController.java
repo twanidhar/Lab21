@@ -9,10 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CoffeeShopController {
-	
+
 	@Autowired
-	User user;
-	
+	private BakeryList bakeryItem;
+//	@Autowired
+//	User user;
+//	
 	@Autowired
 	BakeryList list;
 
