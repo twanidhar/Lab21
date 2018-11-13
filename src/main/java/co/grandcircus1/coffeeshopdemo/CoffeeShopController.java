@@ -11,12 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class CoffeeShopController {
 
 	@Autowired
-	private BakeryList bakeryItem;
+	private BakeryList list;
 //	@Autowired
 //	User user;
 //	
-	@Autowired
-	BakeryList list;
+	
 
 	@RequestMapping("/")
 	public ModelAndView index() {
@@ -39,10 +38,10 @@ public class CoffeeShopController {
 		mv.addObject("Password", Password);
 		return mv;
 	}
-	@RequestMapping("/BakeryList")
-	public ModelAndView showBakeryList() {
+	@RequestMapping("/BakeryList")//required=false, optional for the user and it's fine
+	public ModelAndView showBakeryList(@RequestParam(name="category", required=false) String category) {
 		ModelAndView mav = new ModelAndView("list-bakery");
-		mav.addObject("list", list.getList());
+		mav.addObject("BakeryItem", list.getList());
 		return mav;
 
 }}

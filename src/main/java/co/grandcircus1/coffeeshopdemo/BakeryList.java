@@ -11,9 +11,9 @@ public class BakeryList {
 	
 	public BakeryList() {
 		list.add(new BakeryItem("Mango Lassi", "Fruit and fresh cream drink", 3.99));
-		list.add(new BakeryItem("Partha Paneer wrap", "Bread with veggie and cheese", 4.99));
+		list.add(new BakeryItem("Paratha Paneer wrap", "Bread with veggie and cheese", 4.99));
 		list.add(new BakeryItem("Fruit cake", "Tootie Fruitee", 1.99));
-		list.add(new BakeryItem("Apple turnover", "pastry", 0.99));
+		list.add(new BakeryItem("Apple turnover", "Pastry", 0.99));
 		list.add(new BakeryItem("Chai", "Milk Tea", 2.99));
 		
 	}

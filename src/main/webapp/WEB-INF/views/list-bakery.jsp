@@ -11,26 +11,28 @@
 <h1>Bakery List</h1>
 
 	<form>
-		<input name="category" phaceholder="Category" />
+		<input name="category" placeholder="Category" />
 		<button>Filter</button>
 	</form>
 	<table>
-
+		<thead>
 		<tr>
 			<th>Name</th>
 			<th>Description</th>
 			<th>Price</th>
 		</tr>
-		<c:forEach var="BakeryItem" items="${BakteryItem}">
+		</thead>
+		<tbody>
+		<c:forEach items="${BakeryItem}" var="item">
 			<tr>
-				<td>${BakeryItem.name}</td>
-				<td>${BakeryItem.description}</td>
-				<td>${BakeryItem.price}</td>
+				<td>${item.name}</td>
+				<td>${item.description}</td>
+				<td>${item.price}</td>
 			</tr>
 		</c:forEach>
-
+		</tbody>
 	</table>
-	<a href = "/list-bakery">Add BakeryItem</a>
+	<!-- <a href = "/BakeryList"> BakeryList</a> -->
 
 </body>
 </html>

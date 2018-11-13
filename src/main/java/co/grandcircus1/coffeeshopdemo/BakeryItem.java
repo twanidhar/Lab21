@@ -2,17 +2,28 @@ package co.grandcircus1.coffeeshopdemo;
 
 public class BakeryItem {
 	
+	private Long id;
 	private String name;
 	private String description;
-	private double price;
+	private Double price;
 
 	
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
 	public BakeryItem() {
 
 }
 
 
-	public BakeryItem(String name, String description, double price) {
+	public BakeryItem(String name, String description, Double price) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -45,13 +56,13 @@ public class BakeryItem {
 	}
 
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
 
 	@Override
 	public String toString() {
-		return "BakeryItem [name=" + name + ", description=" + description + ", price=" + price + "]";
+		return "BakeryItem [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
 	} }
  

@@ -10,6 +10,7 @@
 <body>
 <h1>Dhar Registration </h1>
 <p>Hello ${FirstName}</p>
+<a href = "/BakeryList">Bakery List</a>
 <a href = "/">Return to Homepage!</a>
 </body>
 </html>
