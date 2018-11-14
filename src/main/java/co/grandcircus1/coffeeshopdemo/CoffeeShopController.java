@@ -7,14 +7,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
+
+
 @Controller
 public class CoffeeShopController {
 
-	@Autowired
-	private BakeryList list;
+//	@Autowired
+//	private BakeryList list;
 //	@Autowired
 //	User user;
 //	
+	@Autowired
+	BakeryItemDao bakeryDao;
 	
 
 	@RequestMapping("/")
@@ -22,7 +26,7 @@ public class CoffeeShopController {
 		return new ModelAndView("home");
 
 	}
-	@RequestMapping("/forms")
+	@RequestMapping("/registration-forms")
 	public ModelAndView showForms() {
 		return new ModelAndView("forms");
 	}
@@ -38,10 +42,30 @@ public class CoffeeShopController {
 		mv.addObject("Password", Password);
 		return mv;
 	}
-	@RequestMapping("/BakeryList")//required=false, optional for the user and it's fine
+	@RequestMapping("/admin/menu")//required=false, optional for the user and it's fine
 	public ModelAndView showBakeryList(@RequestParam(name="category", required=false) String category) {
-		ModelAndView mav = new ModelAndView("list-bakery");
-		mav.addObject("BakeryItem", list.getList());
+		ModelAndView mav = new ModelAndView("admin");
+		mav.addObject("BakeryItem", bakeryDao.findAll());
 		return mav;
+	}
+	
+	@RequestMapping("/admin/edit?")
+	public ModelAndView showEdit(BakeryItem food) {
+		ModelAndView mav1 = new ModelAndView("edit");
+		bakeryDao.edit(food);
+		return mav1;
+		
+
+	}@RequestMapping("admin/add-bakery")
+	public ModelAndView showAddBakery(BakeryItem food) {
+		ModelAndView mav2 = new ModelAndView("addbakery");//receiving form
+		bakeryDao.create(food);
+		mav2.addObject("BakeryItem", bakeryDao.findAll());
+		
+		return mav2;
+	}
+	@RequestMapping("/admin/add-bakery-form")
+	public ModelAndView showAddBakeryForm() {//showing the form
+		return new ModelAndView("addbakery");
 
 }}

@@ -1,20 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Bakery</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>Freshly Made</h1>
-
-	<form>
-		<input name="category" placeholder="Category" />
-		<button>Filter</button>
-	</form>
-	<table>
+<table>
 		<thead>
 		<tr>
 			<th>Name</th>
@@ -32,7 +26,5 @@
 		</c:forEach>
 		</tbody>
 	</table>
-	<!-- <a href = "/BakeryList"> BakeryList</a> -->
-
 </body>
 </html>

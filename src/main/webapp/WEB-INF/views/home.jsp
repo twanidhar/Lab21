@@ -9,7 +9,8 @@
 </head>
 <body>
 	<h1>Welcome to Dhar's Coffee Shop</h1>
-	<a href="/forms">Registration</a>
-
+	<p><a href="/forms">Registration</a>
+	<p><a href = "/admin/menu">Bakery List</a>
+	</p>
 </body>
 </html>

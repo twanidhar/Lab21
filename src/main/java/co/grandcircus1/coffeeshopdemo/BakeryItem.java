@@ -1,6 +1,15 @@
 package co.grandcircus1.coffeeshopdemo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
+// bakery_item
 public class BakeryItem {
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)//enum
 	
 	private Long id;
 	private String name;
@@ -51,7 +60,7 @@ public class BakeryItem {
 	}
 
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
