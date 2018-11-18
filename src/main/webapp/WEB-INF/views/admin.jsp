@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin view</title>
 </head>
 <body>
 	<!-- With boostrap, pages should generally be surrounded with a container element. -->
@@ -33,12 +33,12 @@
 						<td>${food.name}</td>
 						<td>${food.description}</td>
 						<td>${food.price}</td>
-						<td><a href="/admin/edit?id=${ food.id }"
-							class="btn btn-light btn-sm">Edit</a> <a
-							href="/food/delete?id=${ food.id }" class="btn btn-light btn-sm">Delete</a>
-							<a href="/cart?id=${ food.id }" class="btn btn-light btn-sm">Add
-								Item to Cart</a></td>
+						<td><a href="/admin/edit?id=${ food.id }" class="btn btn-light btn-sm">Edit</a> 
+							<a href="/food/delete?id=${ food.id }" class="btn btn-light btn-sm">Delete</a>
+							<%-- <a href="/cart?id=${ food.id }" class="btn btn-light btn-sm">Add Item to Cart</a> --%>
+						</td>
 					</tr>
+					
 				</c:forEach>
 			</tbody>
 		</table>
@@ -46,14 +46,14 @@
 	</div>
 
 	<div>
-		<a href="add-bakery" />
+		<a href="add-bakery" /></a>
 		<button type="submit" class="btn btn-light btn-sm">Add</button>
 	</div>
-	
-	<div>
-		<a href="/cart"/>
+
+	<!-- <div>
+		<a href="/cart" />
 		<button type="submit" class="btn btn-light btn-sm">View Cart</button>
-	</div>
+	</div> -->
 
 
 </body>

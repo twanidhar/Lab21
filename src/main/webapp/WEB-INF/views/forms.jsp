@@ -31,7 +31,7 @@
 		
 	</form>
 	<p>
-	<form action = "/home">
+	<form action = "/">
 	
 	<p>
 	<button>Home Page</button>

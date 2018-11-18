@@ -10,7 +10,7 @@
 <body>
 <h1>Freshly Made</h1>
 
-	<form>
+	<%-- form>
 		<input name="category" placeholder="Category" />
 		<button>Filter</button>
 	</form>
@@ -33,6 +33,38 @@
 		</tbody>
 	</table>
 	<!-- <a href = "/BakeryList"> BakeryList</a> -->
+<h1>Bakery List</h1> --%>
 
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%-- c:forEach is loops through the items and repeats the content for each one.
+			     Think of this as:   for (Food food : foods) { ... }
+			--%>
+				<c:forEach items="${BakeryItem}" var="food">
+					<tr>
+						<%-- Access properties of the java bean using simple . notation.
+					     This actually calls the getters behind the scenes. --%>
+						<td>${food.name}</td>
+						<td>${food.description}</td>
+						<td>${food.price}</td>
+						<td>
+							<a href="/cart?id=${ food.id }" class="btn btn-light btn-sm">Add Item to Cart</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+		<div>
+		<a href="/cart" /></a>
+		<button type="submit" class="btn btn-light btn-sm">View Cart</button>
+	</div>
 </body>
 </html>

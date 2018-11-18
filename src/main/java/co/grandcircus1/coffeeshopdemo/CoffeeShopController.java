@@ -30,6 +30,7 @@ public class CoffeeShopController {
 	@RequestMapping("/forms")
 	public ModelAndView showForms() {
 		return new ModelAndView("forms");
+	
 	}
 
 	@RequestMapping("/registration")
@@ -44,20 +45,18 @@ public class CoffeeShopController {
 		mv.addObject("Password", Password);
 		return mv;
 	}
+	@RequestMapping("/list-bakery") // required=false, optional for the user and it's fine
+	public ModelAndView showBakeryMenu(@RequestParam(name = "category", required = false) String category) {
+		ModelAndView mav = new ModelAndView("list-bakery");
+		mav.addObject("BakeryItem", bakeryDao.findAll());
+		return mav;
+	}
 
 	@RequestMapping("/admin/menu") // required=false, optional for the user and it's fine
 	public ModelAndView showBakeryList(@RequestParam(name = "category", required = false) String category) {
 		ModelAndView mav = new ModelAndView("admin");
 		mav.addObject("BakeryItem", bakeryDao.findAll());
 		return mav;
-	}
-
-	@RequestMapping("/admin/edit?")
-	public ModelAndView showEdit(BakeryItem food) {
-		ModelAndView mav1 = new ModelAndView("edit");
-		bakeryDao.edit(food);
-		return mav1;
-
 	}
 
 	@RequestMapping("admin/add-bakery")
@@ -87,4 +86,20 @@ public class CoffeeShopController {
 
 		return new ModelAndView("cart");
 	}
+
+	@RequestMapping("/food/delete") // ? means at request
+	public ModelAndView showDelete(@RequestParam("id") Long id) {
+		ModelAndView mav1 = new ModelAndView("redirect:/admin/menu");
+		bakeryDao.delete(id);
+		return mav1;
+	}
+
+//	@RequestMapping("/admin/edit?")
+//	public ModelAndView showEdit(@RequestParam("id") Long id) {
+//		ModelAndView mav1 = new ModelAndView("edit");
+//		bakeryDao.edit(bakeryItem);
+//		return mav1;
+//
+//	}
+
 }

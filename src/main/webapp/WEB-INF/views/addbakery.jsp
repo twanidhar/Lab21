@@ -27,8 +27,12 @@
                 <td><input type="text"name="price" /></td>
             </tr>
             </table>
+            <p>
+            <a href= "/admin/menu">Bakery Menu</a>
+            </p>
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            
+   
+          
 </body>
 </html> 
