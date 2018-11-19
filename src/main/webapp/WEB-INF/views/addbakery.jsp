@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- 
+ <form action="/list-bakery"></form>
         <h1>Bakery Items</h1>
        
        <form action="/admin/add-bakery" method="post">
@@ -21,8 +21,7 @@
                 <th scope="row">Description</th>
                 <td><input type="text" name="description" /></td>
             </tr>
-            
-            <tr>
+             <tr>
                 <th scope="row">Price</th>
                 <td><input type="text"name="price" /></td>
             </tr>
@@ -32,7 +31,5 @@
             </p>
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-   
-          
 </body>
 </html> 

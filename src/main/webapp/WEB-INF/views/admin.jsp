@@ -46,7 +46,8 @@
 	</div>
 
 	<div>
-		<a href="add-bakery" /></a>
+	<form action="addbakery"></form>
+		<a href="addbakery" /></a>
 		<button type="submit" class="btn btn-light btn-sm">Add</button>
 	</div>
 
